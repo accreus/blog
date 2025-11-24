@@ -19,9 +19,12 @@ tags:
 > * **[[Notes|The Notes]]** — *Stream of consciousness notes.*
 > * **[[About|Who is Accreus?]]** — *The person behind the keyboard.*
 
+
 ---
 
-> *"Learning does to your brain what lifting does to your body"*
+> [!abstract] **"Learning does to your brain what lifting does to your body"**
+>
+> * **[[Gym|Gym]]** — *Run far, Lift heavy...*
 
 ---
 
