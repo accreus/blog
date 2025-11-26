@@ -31,7 +31,6 @@ tags:
 <div align="center">
   <p><strong>© 2025 Accreus Yaps</strong><br></p>
   <p> 
-    <a href="https://github.com/accreus">GitHub</a> • 
-    <a href="/index.xml">RSS</a>
+    <a href="https://github.com/accreus">GitHub</a>
   </p>
 </div>
