@@ -1,3 +1,268 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+/* quartz/styles/custom.scss
+   Gruvbox (insanum) - Dark + Light with toggle support
+   Author: adapted for Quartz
+*/
+
+/* ---------- Theme variables (dark default) ---------- */
+:root {
+  /* Dark (Gruvbox dark) */
+  --bg: #1d2021;
+  --bg-soft: #282828;
+  --bg-alt: #32302f;
+  --surface: #3c3836;
+  --surface-alt: #504945;
+
+  --fg: #ebdbb2;
+  --fg-dim: #d5c4a1;
+  --fg-muted: #bdae93;
+
+  --strong: #fabd2f;          /* bright yellow for bold */
+  --link: #83a598;            /* blue bright */
+  --inline-code-bg: #32302f;
+  --inline-code-color: #fe8019;
+
+  /* accents */
+  --red: #cc241d;
+  --orange: #d65d0e;
+  --yellow: #d79921;
+  --green: #98971a;
+  --aqua: #689d6a;
+  --blue: #458588;
+  --purple: #b16286;
+
+  /* translucent highlight used for <mark> */
+  --mark-bg: rgba(250,189,47,0.27);
+
+  --radius: 6px;
+}
+
+/* ---------- Light theme variables ----------- */
+/* Toggle by setting data-theme="light" on <html> (JS will do this) */
+:root[data-theme="light"] {
+  /* Gruvbox Light equivalents (lighter backgrounds + darker text) */
+  --bg: #fbf1c7;          /* page background */
+  --bg-soft: #ebdbb2;
+  --bg-alt: #d5c4a1;
+  --surface: #bdae93;
+  --surface-alt: #a89984;
+
+  --fg: #1d2021;          /* main text */
+  --fg-dim: #282828;
+  --fg-muted: #32302f;
+
+  --strong: #b16286;      /* purple-ish for bold in light mode */
+  --link: #458588;
+  --inline-code-bg: #f5eccf;
+  --inline-code-color: #d65d0e;
+
+  --mark-bg: rgba(22, 22, 22, 0.12); /* subtle dark mark */
+}
+
+/* ---------- Global base ---------- */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+}
+
+/* ---------- Floating theme toggle button (bottom-right) ---------- */
+#gruv-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--surface-alt);
+  padding: 8px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  box-shadow: none;
+}
+#gruv-toggle:focus { outline: 2px solid var(--link); outline-offset: 2px; }
+
+/* ---------- Links ---------- */
+a {
+  color: var(--link);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Headings ---------- */
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  color: var(--fg-dim);
+}
+h1 { color: var(--yellow); }
+h2 { color: var(--orange); }
+h3 { color: var(--red); }
+h4 { color: var(--green); }
+h5 { color: var(--blue); }
+h6 { color: var(--purple); }
+
+/* ---------- Strong / bold ---------- */
+strong, b {
+  color: var(--strong);
+  font-weight: 700;
+}
+
+/* ---------- Italic ---------- */
+em, i {
+  color: var(--fg-dim);
+  font-style: italic;
+}
+
+/* ---------- Inline code ---------- */
+code {
+  background: var(--inline-code-bg);
+  color: var(--inline-code-color);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "JetBrains Mono", monospace;
+  font-size: 0.95em;
+}
+
+/* ---------- Code block ---------- */
+pre, pre code {
+  background: var(--bg-soft);
+  color: var(--fg);
+  padding: 14px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: ui-monospace, "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ---------- Syntax token mapping (Prism / Highlight.js) ---------- */
+/* You may need to ensure your syntax highlighter generates `.token.*` classes (Prism) or `.hljs-*` classes (highlight.js).
+   We'll target both sets. */
+
+/* Prism-style */
+.token.comment,
+.token.prolog,
+.token.cdata,
+.token.doctype {
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.token.keyword,
+.token.selector,
+.token.tag {
+  color: var(--red);
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: var(--purple);
+}
+
+.token.string,
+.token.attr-value {
+  color: var(--green);
+}
+
+.token.function,
+.token.class-name {
+  color: var(--blue);
+}
+
+.token.operator,
+.token.punctuation {
+  color: var(--fg-muted);
+}
+
+/* highlight.js style fallback */
+.hljs-comment,
+.hljs-quote { color: var(--fg-muted); font-style: italic; }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in { color: var(--red); }
+.hljs-number,
+.hljs-literal { color: var(--purple); }
+.hljs-string { color: var(--green); }
+.hljs-title,
+.hljs-function { color: var(--blue); }
+.hljs-subst,
+.hljs-symbol { color: var(--fg-muted); }
+
+/* ---------- Blockquote ---------- */
+blockquote {
+  border-left: 4px solid var(--blue);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--fg-dim);
+  background: transparent;
+  border-radius: 6px;
+}
+
+/* ---------- Mark / highlight (== like obsidian ==) ---------- */
+mark, .mark {
+  background: var(--mark-bg);
+  color: var(--fg);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* ---------- Lists ---------- */
+ul, ol {
+  margin-left: 1.2rem;
+  color: var(--fg);
+}
+li::marker { color: var(--orange); }
+
+/* ---------- Tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+th {
+  background: var(--bg-alt);
+  color: var(--yellow);
+  padding: 8px;
+  text-align: left;
+}
+td {
+  border-top: 1px solid var(--surface-alt);
+  padding: 8px;
+}
+
+/* ---------- Callouts (simple) ---------- */
+.callout {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--blue);
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--fg-dim);
+  margin: 0.8rem 0;
+}
+.callout.note { border-color: var(--blue); }
+.callout.warn { border-color: var(--orange); }
+.callout.danger { border-color: var(--red); }
+
+/* ---------- Misc ---------- */
+hr { border: none; border-top: 1px solid var(--surface-alt); margin: 1.6rem 0; }
+input[type="checkbox"] { accent-color: var(--green); }
+.tag { background: var(--bg-alt); color: var(--aqua); padding: 2px 8px; border-radius: 4px; font-size: 0.85em; }
+
+/* Remove default box shadows to match obsidian flat aesthetic */
+* { box-shadow: none !important; }

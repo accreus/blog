@@ -24,12 +24,12 @@ A 4-day per week training plan following these principles would distribute the f
 
 ### 4-Day Hybrid Bodybuilding Plan Outline
 
-|Day|Focus Areas|Hybrid Principle Integration|
-|:--|:--|:--|
-|**Day 1**|**Upper Body Power & Instability**|Power training done at the start of the workout when the nervous system is fresh. Uses unstable exercises to bridge the gap created by stability-focused bodybuilding.|
-|**Day 2**|**Lower Body Strength & Mobility**|Uses lifts to expand range of motion and build strength in deeper ranges. Incorporates the difficult Active Hold mobility method.|
-|**Day 3**|**Active Recovery / Engine Building**|Focuses solely on cardiovascular "Base Building" to build the body's engine.|
-|**Day 4**|**Full Body Speed & Conditioning**|Focuses on reactive, chaotic, and fast movements. Incorporates high-intensity bursts of conditioning work to stimulate the heart and lungs.|
+| Day       | Focus Areas                           | Hybrid Principle Integration                                                                                                                                           |
+| :-------- | :------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Day 1** | **Upper Body Power & Instability**    | Power training done at the start of the workout when the nervous system is fresh. Uses unstable exercises to bridge the gap created by stability-focused bodybuilding. |
+| **Day 2** | **Lower Body Strength & Mobility**    | Uses lifts to expand range of motion and build strength in deeper ranges. Incorporates the difficult Active Hold mobility method.                                      |
+| **Day 3** | **Active Recovery / Engine Building** | Focuses solely on cardiovascular "Base Building" to build the body's engine.                                                                                           |
+| **Day 4** | **Full Body Speed & Conditioning**    | Focuses on reactive, chaotic, and fast movements. Incorporates high-intensity bursts of conditioning work to stimulate the heart and lungs.                            |
 
 ### Detailed Plan Components
 
