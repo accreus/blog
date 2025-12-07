@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" saved-theme="dark"><head><title>Digital Fundamentals</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Accreus Yaps"/><meta property="og:title" content="Digital Fundamentals"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Digital Fundamentals"/><meta name="twitter:description" content="index Module 2: Digital System &amp; Number System Fundamentals of Digital Systems and Logic Families Logic Gates and Operations: AND Gate: Has two or more inputs but only one output."/><meta property="og:description" content="index Module 2: Digital System &amp; Number System Fundamentals of Digital Systems and Logic Families Logic Gates and Operations: AND Gate: Has two or more inputs but only one output."/><meta property="og:image:alt" content="index Module 2: Digital System &amp; Number System Fundamentals of Digital Systems and Logic Families Logic Gates and Operations: AND Gate: Has two or more inputs but only one output."/><meta property="twitter:domain" content="accreus.github.io/blog"/><meta property="og:url" content="https://accreus.github.io/blog/Notes/Sem3/DF"/><meta property="twitter:url" content="https://accreus.github.io/blog/Notes/Sem3/DF"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="index Module 2: Digital System &amp; Number System Fundamentals of Digital Systems and Logic Families Logic Gates and Operations: AND Gate: Has two or more inputs but only one output."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRDpcXERldlxcYmxvZ1xccXVhcnR6XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://accreus.github.io/blog/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://accreus.github.io/blog/Notes/Sem3/DF-og-image.webp"/><meta property="og:image:url" content="https://accreus.github.io/blog/Notes/Sem3/DF-og-image.webp"/><meta name="twitter:image" content="https://accreus.github.io/blog/Notes/Sem3/DF-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Notes/Sem3/DF"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Accreus Yaps</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-13"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-13" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Notes/">Notes</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../Notes/Sem3/">Sem3</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Digital Fundamentals</a></div></nav><h1 class="article-title">Digital Fundamentals</h1><p show-comma="true" class="content-meta"><time datetime="2025-11-24T11:01:27.000Z">Nov 24, 2025</time><span>20 min read</span></p></div></div><article class="popover-hint"><blockquote>
+<ul>
+<li><a href="../../Notes/Sem3/" class="internal alias" data-slug="Notes/Sem3/index">index</a></li>
+</ul>
+</blockquote>
+<hr/>
+<h3 id="module-2-digital-system--number-system">Module 2: Digital System &amp; Number System<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#module-2-digital-system--number-system" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="fundamentals-of-digital-systems-and-logic-families">Fundamentals of Digital Systems and Logic Families<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fundamentals-of-digital-systems-and-logic-families" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Logic Gates and Operations:</strong>
+<ul>
+<li><strong>AND Gate:</strong> Has two or more inputs but only one output. The output is logic 1 only when all inputs are logic 1. The output is logic 0 if any one input is logic 0. Notation: C = A · B.</li>
+<li><strong>OR Gate:</strong> Has two or more inputs but only one output. The output is logic 0 only when all inputs are logic 0. The output is logic 1 if any one input is logic 1. Notation: C = A + B.</li>
+<li><strong>NOT Gate (Inverter):</strong> Has only one input and one output. Its output is always the complement of its input. The output is logic 1 when its input is logic 0, and logic 0 when its input is logic 1. Notation: C = Ā.</li>
+<li><strong>NAND Gate (Universal Gate):</strong> Means NOT AND, i.e., the AND output is NOTed. The output is logic 0 only when all inputs are logic 1.</li>
+<li><strong>NOR Gate (Universal Gate):</strong> Means NOT OR, i.e., the OR output is NOTed. The output is logic 1 only when all inputs are logic 0.</li>
+<li><strong>EX-OR Gate:</strong> Has two or more inputs but only one output. The output is logic 1 only when the inputs are not equal. It is also called an anti-coincidence gate or inequality detector. Notation: C = A ⊕ B.</li>
+<li><strong>EX-NOR Gate:</strong> An X-NOR gate has two or more inputs but only one output. The output is logic 0 when only one of its inputs is logic 0, or when both inputs are logic 0. It is a coincidence gate or equality detector. Notation: C = A ⊙ B.</li>
+</ul>
+</li>
+<li><strong>Basic Gates as Universal Gates (NAND/NOR Implementation):</strong>
+<ul>
+<li><strong>NOT using NAND gate:</strong> A NAND gate can act as an inverter by tying all its input terminals together and applying the signal to be inverted to a common terminal.</li>
+<li><strong>AND using NAND gate:</strong> NAND means NOT AND. So, a NAND gate is a combination of an AND gate and a NOT gate.</li>
+<li><strong>OR using NAND gate:</strong> By inverting inputs in a NAND gate, an OR gate is constructed via De Morgan’s theorem (Ā · B̄)′ = A + B.</li>
+<li><strong>NOT using NOR gate:</strong> A NOR gate can act as an inverter by tying all its input terminals together and applying the signal to be inverted to a common terminal.</li>
+<li><strong>OR using NOR gate:</strong> NOR means NOT OR. So, a NOR gate is a combination of an OR gate and a NOT gate.</li>
+<li><strong>AND using NOR gate:</strong> By inverting inputs in a NOR gate, an AND gate is constructed via De Morgan’s theorem (Ā + B̄)′ = A · B.</li>
+</ul>
+</li>
+<li><strong>Boolean Algebra:</strong>
+<ul>
+<li><strong>AND laws:</strong> A · 0 = 0 (Null Law), A · 1 = A (Identity Law), A · A = A, A · Ā = 0.</li>
+<li><strong>OR laws:</strong> A + 0 = A (Null Law), A + 1 = 1 (Identity Law), A + A = A, A + Ā = 1.</li>
+<li><strong>Commutative laws:</strong> A + B = B + A, A · B = B · A.</li>
+<li><strong>Associative laws:</strong> (A + B) + C = A + (B + C), (A · B) · C = A · (B · C).</li>
+<li><strong>Distributive laws:</strong> A · (B + C) = A · B + A · C, A + B · C = (A + B) · (A + C).</li>
+<li><strong>Redundant Literal Rule:</strong> A + ĀB = A + B, A(A + B) = A + B.</li>
+<li><strong>Idempotence laws:</strong> A + A = A, A · A = A.</li>
+<li><strong>Absorption laws:</strong> A + A B = A, A(A + B) = A.</li>
+<li><strong>De Morgan’s Theorem:</strong>
+<ul>
+<li>Law 1: (A + B + C)′ = ĀB̄C̄. States that the complement of a sum of variables is equal to the product of their individual complements.</li>
+<li>Law 2: (A · B · C)′ = Ā + B̄ + C̄. States that the complement of a product of variables is equal to the sum of their individual complements.</li>
+</ul>
+</li>
+<li><strong>Reduction of Boolean Expression:</strong> Examples are provided to illustrate simplification using Boolean algebra laws.</li>
+</ul>
+</li>
+</ul>
+<h4 id="number-systems">Number Systems<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#number-systems" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Common Number Systems:</strong>
+<ul>
+<li><strong>Decimal Number System:</strong> Contains ten unique symbols (0-9). Base or radix is 10.</li>
+<li><strong>Binary Number System:</strong> Contains two unique symbols (0, 1). Base or radix is 2.</li>
+<li><strong>Octal Number System:</strong> Contains eight unique symbols (0-7). Base or radix is 8.</li>
+<li><strong>Hexadecimal Number System:</strong> Contains sixteen unique symbols (0-9, A-F). Base or radix is 16.</li>
+</ul>
+</li>
+<li><strong>Number System Conversions:</strong>
+<ul>
+<li><strong>Decimal to Binary Conversion:</strong> The decimal integer is converted to binary by successive division by 2, and the decimal fraction by successive multiplication by 2. Remainders are read from bottom to top for the integer part, and integers from top to bottom for the fractional part.</li>
+<li><strong>Binary to Decimal Conversion:</strong> Binary numbers are converted by multiplying each binary digit by its positional weight (2^n) and summing the products.</li>
+<li><strong>Decimal to Octal Conversion:</strong> Similar to binary, but involves successive division/multiplication by 8. Octal digits are multiplied by 8^n for decimal conversion.</li>
+<li><strong>Decimal to Hexadecimal Conversion:</strong> Similar to octal, but involves successive division/multiplication by 16. Hexadecimal digits are multiplied by 16^n for decimal conversion.</li>
+<li><strong>Octal to Binary Conversion:</strong> Replace each octal digit with its 3-bit binary equivalent.</li>
+<li><strong>Binary to Octal Conversion:</strong> Group binary digits into groups of 3 (from the decimal point outwards) and replace each group with its octal equivalent.</li>
+<li><strong>Hexadecimal to Binary Conversion:</strong> Replace each hexadecimal digit with its 4-bit binary equivalent.</li>
+<li><strong>Binary to Hexadecimal Conversion:</strong> Group binary digits into groups of 4 (from the decimal point outwards) and replace each group with its hexadecimal equivalent.</li>
+<li><strong>Octal to Hexadecimal Conversion:</strong> Convert octal to binary (3-bit groups), then binary to hexadecimal (4-bit groups).</li>
+<li><strong>Hexadecimal to Octal Conversion:</strong> Convert hexadecimal to binary (4-bit groups), then binary to octal (3-bit groups).</li>
+<li><strong>Accuracy in Binary Number Conversion:</strong> Absolute value of allowable error is typically 1% of the number. Maximum error due to truncation is 2^(-n).</li>
+</ul>
+</li>
+<li><strong>Binary Arithmetic:</strong>
+<ul>
+<li><strong>Binary Addition:</strong> Rules: 0+0=0; 0+1=1; 1+0=1; 1+1=10 (0 with a carry of 1); 1+1+1=11 (1 with a carry of 1).</li>
+<li><strong>Binary Subtraction:</strong> Rules: 0-0=0; 1-1=0; 1-0=1; 0-1=1 with a borrow of 1.</li>
+<li><strong>Binary Multiplication:</strong> Illustrated with an example (1011.101 x 101.01).</li>
+<li><strong>Binary Division:</strong> Illustrated with an example (101101 / 110).</li>
+</ul>
+</li>
+<li><strong>Complements Arithmetic:</strong>
+<ul>
+<li><strong>9’s Complement (Decimal):</strong> Obtained by subtracting each digit of the decimal number from 9.</li>
+<li><strong>10’s Complement (Decimal):</strong> Obtained by adding 1 to the 9’s complement. Shortcut: subtract LSB from 10 and rest of the digits from 9.</li>
+<li><strong>1’s Complement (Binary):</strong> Obtained by changing 1’s to 0’s and 0’s to 1’s in the binary number.</li>
+<li><strong>2’s Complement (Binary):</strong> Obtained by adding 1 to the 1’s complement. Shortcut: Start at the least significant bit (LSB), copy all zeros, working from LSB toward MSB, copy the first 1, and flip all remaining bits.</li>
+<li><strong>Signed Number Representation:</strong> The 2’s complement system is used. For positive numbers, magnitude is represented in true binary form and sign bit is 0. For negative numbers, magnitude is represented in 2’s complement form and sign bit is 1.</li>
+<li><strong>Subtraction using Complement Forms:</strong> Procedures are provided for decimal subtraction using 9’s/10’s complement and binary subtraction using 1’s/2’s complement. If there is a carry, the result is positive; if no carry, the result is negative and its complement must be taken.</li>
+</ul>
+</li>
+<li><strong>Codes:</strong>
+<ul>
+<li><strong>BCD Code (Binary Coded Decimal):</strong> In this code, each decimal digit (0-9) is coded by a 4-bit binary number. It is a weighted code. Six illegal combinations (1010-1111) exist.
+<ul>
+<li><strong>BCD Addition:</strong> If there is a carry or illegal sum (not 0-9), add 6 (0110) to the sum term, and add the resulting carry to the next group.</li>
+<li><strong>BCD Subtraction:</strong> If there is a borrow from the next higher group, then no correction is required. If there is a borrow from the next group and 6 is subtracted from the difference, this is the correct difference.</li>
+</ul>
+</li>
+<li><strong>Excess-3 Code (XS-3):</strong> A non-weighted BCD code derived by adding 3 (0011) to each BCD digit. It is sequential and self-complementing. It has six invalid states.
+<ul>
+<li><strong>XS-3 Addition/Subtraction:</strong> If there is no carry out from the addition of any of the 4-bit groups, subtract 0011 from the sum. If there is a carry out, add 0011 to the sum. Subtraction rules are similar.</li>
+</ul>
+</li>
+<li><strong>Gray Code:</strong> A non-weighted code. It is a cyclic code where successive code words differ in only one bit position. It is a reflective code. The N least significant bits for 2^(n-1)-1 are mirror images for those from 0 to 2^(n-1)-1.
+<ul>
+<li><strong>Binary to Gray Conversion:</strong> The MSB of the gray code is the same as the MSB of the binary number. Perform X-ORing between the MSB of the binary and the next bit to get the next bit of the gray code.</li>
+<li><strong>Gray to Binary Conversion:</strong> The MSB of the binary number is the same as the MSB of the gray code. Perform X-ORing between the MSB of the binary and the next significant bit of the gray code to get the next bit of the binary.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Error Detecting and Correcting Codes:</strong>
+<ul>
+<li><strong>Parity:</strong> The simplest technique for detecting errors. An extra bit, the parity bit, is added to each word.
+<ul>
+<li><strong>Even parity:</strong> Parity bit is set to 0 or 1 such that the total number of 1s in the word (including parity bit) is an even number.</li>
+<li><strong>Odd parity:</strong> Parity bit is set to 0 or 1 such that the total number of 1s in the word (including parity bit) is an odd number.</li>
+<li>A parity checking circuit generates an error signal if the total number of 1s in an odd-parity system is odd, or in an even-parity system. It can detect a single-bit error but not two or more errors within the same word.</li>
+</ul>
+</li>
+<li><strong>Check Sums:</strong> Simple parity can detect two errors within the same word. Adding a two-dimensional parity check sum can help detect errors transmitted across data.</li>
+<li><strong>Block Parity:</strong> Used when several binary words are transmitted in succession. Parity bits are assigned to both rows and columns (row-wise and column-wise parity). This technique can correct a single error.</li>
+<li><strong>Error Correcting Code:</strong> A code that can always be deduced from an erroneous word. The minimum distance of a code is the smallest number of bits by which any two code words must differ. Distance of 3 can correct single-bit errors, but not detect two-bit errors.</li>
+<li><strong>7-bit Hamming Code:</strong> A code used to encode 4 data bits (D1-D4) into a 7-bit code word by adding three parity bits (P1-P3) at positions 2^0, 2^1, and 2^2. Each parity bit is set to achieve even parity for specific data bits.</li>
+</ul>
+</li>
+</ul>
+<h4 id="characteristics-of-digital-ics">Characteristics of Digital ICs<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#characteristics-of-digital-ics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Threshold Voltage:</strong> The voltage at the input of a gate that causes a change in the state of the output from one logic level to the other.</li>
+<li><strong>Propagation Delay:</strong> The time a gate takes to propagate a certain amount of time to output. Average transition delay time (tpd) is expressed as (tPLH + tPHL)/2, where tPLH is signal delay time when output goes from logic 0 to 1, and tPHL is delay time when output goes from logic 1 to 0.</li>
+<li><strong>Power Dissipation:</strong> The power required by a logic gate to operate with 50% duty cycle at a specified frequency.</li>
+<li><strong>Fan-in:</strong> The number of inputs that the gate is designed to handle.</li>
+<li><strong>Fan-out:</strong> The maximum number of standard loads that the output of the gate can drive without impairing its normal operation.</li>
+<li><strong>Voltage Parameters:</strong>
+<ul>
+<li><strong>VIL(min):</strong> Minimum voltage level required at the input of a gate for that input to be treated as a logic 1.</li>
+<li><strong>VIH(min):</strong> Minimum voltage level required at the input of a gate for that input to be treated as a logic 1.</li>
+<li><strong>VOL(max):</strong> Maximum voltage level that can be treated as logic 0 at the output of the gate.</li>
+<li><strong>VOH(max):</strong> Maximum voltage level that can be treated as logic 0 at the output of the gate.</li>
+<li><strong>IIL:</strong> Current that flows into an input when a specified LOW level voltage is applied.</li>
+<li><strong>IIH:</strong> Current that flows into an input when a specified HIGH level voltage is applied.</li>
+<li><strong>IOL:</strong> Current that flows from an output in a logic 0 state under specified load conditions.</li>
+<li><strong>IOH:</strong> Current that flows from an output in a logic 1 state under specified load conditions.</li>
+</ul>
+</li>
+<li><strong>Noise Margin:</strong> When digital circuits operate in a noisy environment, gates may malfunction if noise is beyond certain limits. Noise immunity refers to a circuit’s ability to tolerate noise voltages at its inputs.</li>
+<li><strong>Operating Temperature:</strong> IC gates and other circuits are temperature sensitive. The range of temperature for commercial applications is 0 to 70°C, for industrial 0 to 85°C, and for military applications -55°C to 125°C.</li>
+<li><strong>Speed Power Product:</strong> A common measure for comparing and obtaining the overall performance of an IC family. It is the speed power product, obtained by multiplying the gate propagation delay by the gate power dissipation.</li>
+</ul>
+<h4 id="digital-logic-families">Digital Logic Families<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#digital-logic-families" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>TTL vs CMOS vs ECL:</strong> A table compares characteristics like Power input, Frequency limit, Circuit density, and Circuit types per family.</li>
+<li><strong>Transistor-Transistor Logic (TTL):</strong> Named for its dependence on transistors alone to perform basic logic operations. It is the most popular logic family and widely used bipolar digital IC family. TTL uses transistors operating in saturated mode. Basic TTL logic circuit is the NAND gate. TTL variants include Standard TTL, High Speed TTL, Low power TTL, Schottky TTL, Advanced Schottky TTL, Advanced low power Schottky TTL, and Rfast TTL.</li>
+<li><strong>Schottky TTL:</strong> A standard TTL version, but high speed TTL series operates using saturated switching. It has more than three times the switching speed of standard TTL, at the expense of approximately doubling the power consumption. Schottky TTL 74S series reduces storage time delay by not allowing the transistor to go into full saturation.</li>
+<li><strong>Tri-State TTL:</strong> The third TTL configuration, it utilizes a totem-pole configuration and wire ANDing of the open-collector configuration. It has three possible output states: HIGH, LOW, and HIGH impedance (Hi-Z). In the Hi-Z state, both transistors in the totem-pole arrangement are turned off, so the output terminal is a HIGH impedance to ground or Vcc. The output is an open or floating terminal, not LOW or HIGH.</li>
+</ul>
+<h3 id="module-3-combinational-logic-design">Module 3: Combinational Logic Design<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#module-3-combinational-logic-design" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="combinational-digital-circuits">Combinational Digital Circuits<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#combinational-digital-circuits" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Standard Representation for Logic Functions:</strong>
+<ul>
+<li><strong>Sum-of-products (SOP) Form:</strong> Also called Disjunctive Normal Form (DNF). Example: f(A, B, C) = ĀB + B̄C̄.</li>
+<li><strong>Product-of-sums (POS) Form:</strong> Also called Conjunctive Normal Form (CNF). The function above equation may also be written in the form shown in equation below. By multiplying it out and using the consensus theorem, we can see that it is the same as f(A,B,C) = (A+B)(B+C).</li>
+<li><strong>Standard Sum-of-Products Form (Disjunctive Canonical Form, DCF):</strong> All variables of the function either in complemented or uncomplemented form. This form is obtained by finding the sum of all the terms that correspond to those combinations (rows) for which f assumes the value 1.</li>
+<li><strong>Standard Product-of-Sums Form (Conjunctive Canonical Form, CCF):</strong> All variables of the function either in complemented or uncomplemented form. This form is obtained by finding the product of all terms that correspond to those combinations (rows) for which f assumes the value 0.</li>
+<li><strong>Minterm:</strong> A product term containing all variables of the function either in complemented or uncomplemented form. A minterm assumes the value 1 only for one combination of the variables.</li>
+<li><strong>Maxterm:</strong> A sum term containing all variables of the function. It assumes value 0 for only one combination of variables.</li>
+</ul>
+</li>
+</ul>
+<h4 id="k-map-representation-and-simplification">K-map Representation and Simplification<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#k-map-representation-and-simplification" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Karnaugh Map (K-Map):</strong> A systematic method of simplifying Boolean expressions. It is a chart or a graph composed of an arrangement of adjacent cells, each representing a particular combination of variables in sum of product form.</li>
+<li><strong>Two-variable K-Map:</strong> Has 2^2 = 4 possible combinations.</li>
+<li><strong>Three-variable K-Map:</strong> Has 2^3 = 8 possible combinations.</li>
+<li><strong>Four-variable K-Map:</strong> Has 2^4 = 16 possible combinations.</li>
+<li><strong>Reduction using K-Map:</strong> Squares that are physically adjacent or adjacent to each other by wrapping the map can be combined to form bigger squares. The bigger squares (2, 4, 8, etc.) must form either a geometric square or rectangle. The minterms or maxterms to be combinable need their binary designations to differ by a power of 2.</li>
+<li><strong>K-Map with Don’t Care Conditions:</strong> Don’t care conditions are denoted by ‘X’ in a K-Map, meaning the output can be either 0 or 1. They can be used to form larger groups for simplification.</li>
+</ul>
+<h4 id="minimization-of-logical-functions-using-tabulation-method-and-variable-entered-mapping-method">Minimization of Logical Functions using Tabulation Method and Variable Entered Mapping Method<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#minimization-of-logical-functions-using-tabulation-method-and-variable-entered-mapping-method" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Quine McCluskey Method (Tabulation Method):</strong> A procedure for minimization using a tabulation table.
+<ol>
+<li>List all minterms.</li>
+<li>Arrange all minterms in groups based on the number of 1s in their binary representation.</li>
+<li>Compare each term of the lowest index group with every term in the succeeding group. Combined terms are marked with a check. New combined terms form the next column.</li>
+<li>Compare terms in the same fashion until no further combinations are possible.</li>
+<li>List all prime implicants and draw the prime implicant chart.</li>
+<li>Obtain the essential prime implicants and minimal expression.</li>
+</ol>
+</li>
+<li><strong>Variable-Entered Map (VEM):</strong> An n-variable problem can be plotted on an n-1 variable map. It is useful for implementing designs involving multiplexers. The values of variables in the map itself depend on the logic function and the plotting variable K-Map.</li>
+</ul>
+<h4 id="multiplexer-de-multiplexerdecoders">Multiplexer, De-Multiplexer/Decoders<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#multiplexer-de-multiplexerdecoders" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Multiplexer (MUX):</strong> A device that allows digital information from several sources to be routed onto a single line for transmission. It is a many-to-one device.
+<ul>
+<li>The relationship between inputs (m) and control inputs (n) is m = 2^n.</li>
+<li><strong>Applications:</strong> Logic function generation, data selection, data routing, operation sequencing, parallel-to-serial conversion, waveform generation.</li>
+</ul>
+</li>
+<li><strong>Demultiplexer (DEMUX):</strong> Takes several inputs and transmits one of them to the output. It performs the reverse operation of a multiplexer. It is a one-to-many device (1-to-N). The relationship between outputs (m) and control inputs (n) is m = 2^n.</li>
+<li><strong>Decoder:</strong> A logic circuit that converts an N-bit binary input code into M output lines such that only one output line is activated for each one of the possible combinations of inputs. It identifies or recognizes a particular code.
+<ul>
+<li><strong>3 to 8 Decoder:</strong> Shows the circuitry for a decoder with three inputs and eight outputs. It uses all AND gates, and outputs are active-HIGH.</li>
+</ul>
+</li>
+</ul>
+<h4 id="adders-subtractors">Adders, Subtractors<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#adders-subtractors" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Half Adder:</strong> A combinational circuit with two binary inputs (augend and addend bits) and two binary outputs (sum and carry).
+<ul>
+<li>Sum (S) is the X-OR of A and B (S = A ⊕ B).</li>
+<li>Carry (C) is the AND of A and B (C = AB).</li>
+</ul>
+</li>
+<li><strong>Full Adder:</strong> A combinational circuit that adds two bits and a carry and outputs a sum bit and a carry bit. It can add two binary numbers, each having two or more bits.
+<ul>
+<li>The sum (S) output is equal to 1 when only one input is 1 or when all three inputs are 1.</li>
+<li>The carry (Cout) output is 1 if two or three inputs are 1.</li>
+<li>Can be realized using two X-OR gates and two AND gates, and one OR gate.</li>
+</ul>
+</li>
+<li><strong>Half Subtractor:</strong> A combinational circuit that subtracts one bit from another and produces the difference. It has an output for a borrow bit.
+<ul>
+<li>Difference (d) is A ⊕ B.</li>
+<li>Borrow (b) is ĀB.</li>
+</ul>
+</li>
+<li><strong>Full Subtractor:</strong> A combinational circuit that performs subtraction for two bits and a borrow input. It is used for LSB subtraction.
+<ul>
+<li>Difference (d) is A ⊕ B ⊕ Cin.</li>
+<li>Borrow (b) is ĀB + Cin(Ā ⊕ B).</li>
+</ul>
+</li>
+<li><strong>Binary Parallel Adder:</strong> A digital circuit that adds two binary numbers in parallel. Consists of full adders connected in a chain, with the output carry from each full-adder connected to the input carry of the next full-adder.</li>
+<li><strong>Binary Parallel Subtractor:</strong> Subtracts binary numbers by means of complement. Subtraction A-B can be done by taking the 2’s complement of B and adding it to A.</li>
+<li><strong>Binary Adder-Subtractor:</strong> Figure shows a 4-bit adder-subtractor circuit. The mode input M controls the operation: M=0 for addition, M=1 for subtraction. The circuit performs A + B if M=0, and A + B’ + 1 (i.e. A-B) if M=1.</li>
+<li><strong>Look Ahead Carry Adder:</strong> Speeds up the addition process by ripple reduction. It examines all input bits simultaneously and generates the carry-in bits for all stages simultaneously. The carry output for the nth stage is expressed as a two-level AND-OR or equivalent NAND-NAND form.</li>
+</ul>
+<h4 id="bcd-arithmetic">BCD Arithmetic<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bcd-arithmetic" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>BCD Addition and Subtraction details are covered under “Codes” in Module 2.</li>
+</ul>
+<h4 id="carry-look-ahead-adder">Carry Look Ahead Adder<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#carry-look-ahead-adder" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Details are covered under “Adders, Subtractors”.</li>
+</ul>
+<h4 id="serial-adder">Serial Adder<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#serial-adder" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>A serial adder is used to add binary numbers in serial form. Two binary numbers are stored in shift registers A and B. Bits are added one pair at a time using a single full adder (FA) circuit. The carry output of the full adder is transferred to a D flip-flop, which serves as the carry input for the next pair of bits.</li>
+</ul>
+<h4 id="alu-arithmetic-logic-unit-elementary-alu-design">ALU (Arithmetic Logic Unit), Elementary ALU Design<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#alu-arithmetic-logic-unit-elementary-alu-design" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Arithmetic Logic Unit (ALU):</strong> A very popular and widely used combinational circuit capable of performing arithmetic as well as logical operations. To perform a micro-operation, specific registers are placed in the inputs of the ALU. The ALU performs an operation, and the result is transferred to a destination register.</li>
+<li><strong>Elementary ALU Design:</strong> A table shows selection inputs (S2, S1, S0) and carry input (Cin) for various functions like transfer, increment, add, subtract with borrow, decrement, OR, XOR, AND, and complement.</li>
+</ul>
+<h4 id="popular-msi-chips">Popular MSI Chips<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#popular-msi-chips" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>The sources describe the functionality of various MSI (Medium Scale Integration) circuits like multiplexers, demultiplexers, adders, subtractors, and comparators. However, they do not list specific “popular MSI chips” by their common IC number designations (e.g., 74LSxx).</p>
+<h4 id="digital-comparator">Digital Comparator<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#digital-comparator" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>1-bit Magnitude Comparator:</strong> Compares two 1-bit numbers, A and B.
+<ul>
+<li>A > B: G = A B̄.</li>
+<li>A &lt; B: L = Ā B.</li>
+<li>A = B: E = A ⊙ B.</li>
+</ul>
+</li>
+<li><strong>2-bit Magnitude Comparator:</strong> Compares two 2-bit numbers, A=A1A0 and B=B1B0. Logic for A>B, A&lt;B, and A=B are provided in Boolean expressions.</li>
+</ul>
+<h4 id="parity-checkergenerator">Parity Checker/Generator<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#parity-checkergenerator" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Parity Generator:</strong> Generates a parity bit for a given set of data bits. Uses exclusive-OR functions. The logic for a 3-bit parity generator (f = A ⊕ B ⊕ C) is shown.</li>
+<li><strong>Parity Checker:</strong> Used in error detection. Checks if the received data has correct parity.</li>
+</ul>
+<h4 id="code-converters">Code Converters<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#code-converters" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Binary to Gray Converter:</strong> Converts a 4-bit binary input (B3B2B1B0) to a 4-bit gray code output (G3G2G1G0). Logic expressions and K-maps for each gray code bit are provided (e.g., G3=B3, G2=B3⊕B2).</li>
+<li><strong>BCD to XS-3 Code Converter:</strong> Converts 4-bit BCD input (B4B3B2B1) to XS-3 code output (X4X3X2X1). A truth table and K-maps are used for conversion.</li>
+</ul>
+<h4 id="priority-encoders">Priority Encoders<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#priority-encoders" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li><strong>Priority Encoder:</strong> A logic circuit that responds to just one input in accordance with some priority system, ensuring that only the highest priority input is recognized when multiple inputs are HIGH. The output is a binary representation of the input with the highest priority.
+<ul>
+<li>A truth table and K-maps illustrate a 4-input priority encoder example.</li>
+</ul>
+</li>
+</ul>
+<h4 id="decodersdrivers-for-display-devices">Decoders/Drivers for Display Devices<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#decodersdrivers-for-display-devices" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>Decoders are covered above. Specific “drivers for display devices” are not detailed in the sources.</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-1" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-0"><a href="#module-2-digital-system--number-system" data-for="module-2-digital-system--number-system">Module 2: Digital System &amp; Number System</a></li><li class="depth-0"><a href="#module-3-combinational-logic-design" data-for="module-3-combinational-logic-design">Module 3: Combinational Logic Design</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-2" class="overflow"><li><a href="../../Notes/Sem3/" class="internal">index</a></li><li class="overflow-end"></li></ul></div></div><footer class><p><a href="https://accreus.github.io/blog">By Accreus</a> © 2025</p><ul><li><a href="https://github.com/accreus">GitHub</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../postscript.js" type="module"></script></html>

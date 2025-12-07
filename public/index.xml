@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Accreus Yaps</title>
+      <link>https://accreus.github.io/blog</link>
+      <description>Last 10 notes on Accreus Yaps</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Gym</title>
+    <link>https://accreus.github.io/blog/Gym</link>
+    <guid>https://accreus.github.io/blog/Gym</guid>
+    <description><![CDATA[  Work on the 5 core areas - Hypertrophy, Strength, Power, Mobility and Endurance… Exercise selection “Remove all the redundancies.” All the exercises have a few core movement patterns Squat Hinge Lunge Horizontal Push Horizontal Pull Vertical Push Vertical Pull Whenever building a program, pick at l... ]]></description>
+    <pubDate>Fri, 28 Nov 2025 06:11:46 GMT</pubDate>
+  </item><item>
+    <title>Technical Stuff</title>
+    <link>https://accreus.github.io/blog/Tech/Technical-Stuff</link>
+    <guid>https://accreus.github.io/blog/Tech/Technical-Stuff</guid>
+    <description><![CDATA[  Linux 1. Terminals and Shells Python . ]]></description>
+    <pubDate>Fri, 28 Nov 2025 06:11:46 GMT</pubDate>
+  </item><item>
+    <title>Accreus Yaps</title>
+    <link>https://accreus.github.io/blog/</link>
+    <guid>https://accreus.github.io/blog/</guid>
+    <description><![CDATA[  Welcome to Accreus Yaps Siddhāntaḥ You have stumbled upon a place where I “yap” about the software I build, the things I learn, the books I devour, and the random notes that don’t fit anywhere else. ]]></description>
+    <pubDate>Wed, 26 Nov 2025 14:31:42 GMT</pubDate>
+  </item><item>
+    <title>About</title>
+    <link>https://accreus.github.io/blog/About</link>
+    <guid>https://accreus.github.io/blog/About</guid>
+    <description><![CDATA[ Accreus From the accretion disk of a quasar. I am Accreus…. ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item><item>
+    <title>Art Gallery</title>
+    <link>https://accreus.github.io/blog/Art/Art-Gallery</link>
+    <guid>https://accreus.github.io/blog/Art/Art-Gallery</guid>
+    <description><![CDATA[  . ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item><item>
+    <title>Book Club</title>
+    <link>https://accreus.github.io/blog/Books/Book-Club</link>
+    <guid>https://accreus.github.io/blog/Books/Book-Club</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item><item>
+    <title>Notes</title>
+    <link>https://accreus.github.io/blog/Notes/Notes</link>
+    <guid>https://accreus.github.io/blog/Notes/Notes</guid>
+    <description><![CDATA[ Notes BE Sem3 . ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item><item>
+    <title>DBMS</title>
+    <link>https://accreus.github.io/blog/Notes/Sem3/DBMS</link>
+    <guid>https://accreus.github.io/blog/Notes/Sem3/DBMS</guid>
+    <description><![CDATA[  index . ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item><item>
+    <title>Digital Fundamentals</title>
+    <link>https://accreus.github.io/blog/Notes/Sem3/DF</link>
+    <guid>https://accreus.github.io/blog/Notes/Sem3/DF</guid>
+    <description><![CDATA[  index Module 2: Digital System &amp; Number System Fundamentals of Digital Systems and Logic Families Logic Gates and Operations: AND Gate: Has two or more inputs but only one output. ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://accreus.github.io/blog/Notes/Sem3/</link>
+    <guid>https://accreus.github.io/blog/Notes/Sem3/</guid>
+    <description><![CDATA[ DBMS DF. ]]></description>
+    <pubDate>Mon, 24 Nov 2025 11:01:27 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
