@@ -1,4 +1,10 @@
 # Accreus
-###### From the accretion disk of a quasar.
+
+> From the accretion disk of a quasar.
 ---
-I am Accreus...
+> [!quote] **I am Accreus...**
+>Mind optimized for compute, 
+>Heart tuned for horsepower 
+
+>I am equal parts memory and compute, torque and horsepower...
+
