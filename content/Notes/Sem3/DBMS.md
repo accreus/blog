@@ -1,3 +1,8 @@
+---
+title: DBMS
+draft: false
+tags:
+---
 > * [[Notes/Sem3/index|index]]
 ---
 # Briefing on Database Management Systems
