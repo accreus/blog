@@ -6,6 +6,7 @@ tags:
 > * [[Notes/Sem3/index|index]]
 ---
 # Formulas => [[PS Formulas]]
+---
 
 ## Executive Summary
 

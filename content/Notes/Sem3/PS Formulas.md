@@ -6,6 +6,9 @@ tags:
 > * [[Notes/Sem3/index|index]]
 ---
 
+# [[Notes/Sem3/Probability and Statistics | PS Theory]]
+---
+
 ### **Unit 1: Basic Probability Theory**
 
 - **Classical Probability:** $P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}} = \frac{m}{n}$.
